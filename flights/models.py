@@ -1,6 +1,9 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 
+from django.db.models import Q
+from datetime import date, timedelta
+
 class Gate(models.Model):
     code = models.CharField(max_length=3, unique=True)
     available = models.BooleanField(default=True)

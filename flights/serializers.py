@@ -19,20 +19,16 @@ class GateSerializers(serializers.ModelSerializer):
 
 
 class PassengerSerializers(serializers.ModelSerializer):
-    status_checkin_display = serializers.SerializerMethodField()
 
     class Meta:
         model = Passenger
-        fields = ['name', 'cpf', 'status_checkin', 'status_checkin_display', 'flight']
+        fields = ['name', 'cpf', 'status_checkin', 'flight']
     
-    def get_status_checkin_display(self, obj):
-        return obj.get_status_checkin_display()
-
 
 class PassengerReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = Passenger
-        fields = ['name', 'status_checkin', 'flight']
+        fields = ['id', 'name', 'status_checkin', 'flight']
 
 
 class FlightsReportSerializer(serializers.ModelSerializer):
@@ -41,3 +37,4 @@ class FlightsReportSerializer(serializers.ModelSerializer):
         model = Flight
         fields = ['id', 'flight_number', 'status']
 
+ 

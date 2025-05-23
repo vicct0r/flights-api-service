@@ -6,8 +6,10 @@ urlpatterns = [
     path('flights/<int:pk>/', FlightRetrieveView.as_view(), name='flight'),
     path('flights/today/', FlightReportAPIView.as_view(), name='flight_report'),
     path('flights/<int:pk>/passengers/', PassengerRerpotAPIView.as_view(), name='flight_passengers'),
-    path('flights/gates/', GateReportAPIView.as_view(), name='flight_gates'),
+    path('flights/<int:pk>/gates/', GateReportAPIView.as_view(), name='flight_gates'),
+    path('passengers/', PassengerListCreateView.as_view(), name='passengers'),
     path('passengers/<int:pk>/', PagessengerRetrieveView.as_view(), name='passenger'),
     path('gates/', GateListCreateView.as_view(), name='gates'),
     path('gates/<int:pk>/', GateRetrieveView.as_view(), name='gate')
+
 ]

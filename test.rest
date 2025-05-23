@@ -1,0 +1,26 @@
+
+POST http://127.0.0.1:8000/signup
+Content-Type: application/json
+
+{
+    "username": "inacio",
+    "password": "123@Victor",
+    "email": "victor@hotmail.com"
+}
+
+### 
+
+POST http://127.0.0.1:8000/login
+Content-Type: application/json
+
+{
+    "username": "@inacio",
+    "password": "12233@Victor"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/flights/today
+Content-Type: application/json
+Authorization: Token b7d99d11ec67b14e5047e9d611dae671accf43de
+
